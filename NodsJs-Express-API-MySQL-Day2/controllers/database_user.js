@@ -1,13 +1,4 @@
-import { createConnection } from 'mysql2';
-
-var sql = createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'Nirvana@1987@',
-  database : 'ECOM_API',
-  multipleStatements: true
-});
-sql.connect();
+import sql from '../connection/MySQL_connection.js';
 
 // Create a user
 export const createUser = (req, res) => {
