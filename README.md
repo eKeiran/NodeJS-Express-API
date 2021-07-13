@@ -28,7 +28,7 @@ This code creates an API using Node.js and Express and also handles all CURD ope
                    "phoneNo" : ""
                 }</code> </li>
    <li>Checked all the POST, GET, PATCH, DELETE commands for the user details stored locally through postman. They all work. </li></ul>
-   <h4><i>CONCLUSION: This API successfully performs all CURD operations on a user model.<br></h4></i>
+   <h4><i>CONCLUSION: This API successfully performs all CURD operations on a user model with details stored in the program itself.<br></h4></i>
   <hr>
    <h2><ins>2.) Node.js and Express API Integrated with MySQL - Day 2</ins></h2>
    Here, I've connected the above API to a MySQL database and it contains two models namely "users" and "products" which mimics an e-commerce API. The details for users and products are stored in a MySQL database with tables: <code>tb_users</code> and <code>tb_products</code>. Below is a brief step by step explanation: 
