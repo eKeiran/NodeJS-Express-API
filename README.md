@@ -1,7 +1,7 @@
 # NodeJS-Express-API:
 
 This is a code repository for the tasks I've been assigned in NodeJS and Express. Below is a summary of what each project/folder does and how I made them. </br>
-<ins><b><h2>1.) Node.js and Express API - Day 1</b></h2></ins>
+ <h2><ins>1.) Node.js and Express API - Day 1</ins></h2>
 <br>
 This code creates an API using Node.js and Express and also handles all CURD operations through POSTMAN in a 'user' model with details like Full name, age, and phone number stored locally in the program itself. <br> 
  Here's a brief step-by-step summary of how I went about this and what the API can do:<br><br>
