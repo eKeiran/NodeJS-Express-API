@@ -1,0 +1,21 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CU_Product`(
+IN _id_ INT,
+IN _prodName_ VARCHAR(50),
+IN _brand_ varchar(45),
+IN _price_ INT 
+)
+BEGIN
+IF _id_ = 0 THEN
+INSERT INTO tb_products(id, prodName, brand, price)
+SELECT MAX(id) + 1, _prodName_, _brand_,_price_
+  FROM tb_products;
+ELSE
+UPDATE tb_products
+SET
+prodName = _prodName_,
+brand = _brand_,
+price = _price_,
+id = _id_
+WHERE  id = _id_;
+END IF;
+END

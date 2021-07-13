@@ -1,0 +1,21 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CU_User`(
+IN _id_ INT,
+IN _fullName_ VARCHAR(50),
+IN _age_ int(45),
+IN _mn_ INT 
+)
+BEGIN
+IF _id_ = 0 THEN
+INSERT INTO tb_users(id, fullName,age,phoneNo)
+SELECT MAX(id) + 1, _fullname_, _age_,_mn_
+  FROM tb_users; 
+ELSE
+UPDATE tb_users
+SET
+age = _age_,
+fullName = _fullname_,
+phoneNo = _mn_,
+id = _id_
+WHERE  id = _id_;
+END IF;
+END
