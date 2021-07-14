@@ -27,7 +27,7 @@ This code creates an API using Node.js and Express and also handles all CURD ope
                   "age": "",
                    "phoneNo" : ""
                 }</code> </li>
-   <li>Checked all the POST, GET, PATCH, DELETE commands for the user details stored locally through postman. They all work. </li></ul>
+   <li>Checked all the POST, GET, PATCH, DELETE commands for the user details stored locally through POSTMAN. They all work. </li></ul>
    <h4><i>CONCLUSION: This API successfully performs all CURD operations on a user model with details stored in the program itself.<br></h4></i>
   <hr>
    <h2><ins>2.) Node.js and Express API Integrated with MySQL - Day 2</ins></h2>
@@ -42,8 +42,8 @@ This code creates an API using Node.js and Express and also handles all CURD ope
       <li>In the controllers folder, created two files, <code>"database_user"</code> and <code>"database_prod"</code> to define and export all the functions that the route is suposed to perfrom.</li>
      <li>Imported the variable from <code>"MySQL_connection.js"</code> files to <code>"database_user"</code> and <code>"database_prod"</code>.
       <li>Imported the functions from the controller files to <code>"routes/database_routes.js"</code></li>
-      <li>Checked all the POST, GET, PUT, DELETE commands for the user details and product details through postman which modifies them in the MySQL database as well. They all worked just fine.</li>
-   <li>This API is expected to have the following user details and product details to perform CURD operations on which I saved in a user.json and products.json file:<br> 
+      <li>Checked all the POST, GET, PUT, DELETE commands for the user details and product details through POSTMAN which modifies them in the MySQL database as well. They all worked just fine.</li>
+   <li>This API is expected to have the following user details and product details to perform CURD operations on which I saved in a <code>user.json</code> and <code>products.json</code> file:<br> 
        <code> {
     "id":"",
     "fullName": "",
@@ -59,7 +59,20 @@ This code creates an API using Node.js and Express and also handles all CURD ope
      <li> POST: Here POST works by sending a user/product with "ID": 0 in POSTMAN, and the API automatically adds the next number in the sequence of the ID column to the newly posted user/product.</li>
        <li>PUT: Here PUT works by  sending a user/product with an already existing ID in POSTMAN and entering all the details. This is a PUT function and not PATCH like in the previous program so every detail must be added. </li></ul></ul>
 <h4><i>CONCLUSION: This API successfully performs all CURD operations in a MySQL database for a user and a products model.<br></h4></i>
-  
+  <hr>
+   <h2><ins>3.) Node.js and Express API Integrating MySQL Databse Using ORM (Sequelize) - Day 3</ins></h2>
+     Now, the above API's MySQL Databse isn't used by a pakage like <code>"mysql2"</code> but instead it is accessed and modified through an Object-Relation Mapping module called <code>"Sequelize"</code> which  maps the objects to database tables. Here's a step-by-step process:
+     <ul><li>Installed sequelize with the command <code>"npm install --save sequelize"</code></li>
+         <li>Created a file called <code>"Sequelize_connections"</code> to connect to the database.</li> 
+         <li>Created a new database called <code>"ECOM_API_ORM"</code> with the same tables as above.</li> 
+         <li>Imported the connection to <code>"database_user"</code> and <code>"database_prod"</code>.</li>
+         <li>Created the controllers in the above files by refering to the sequelize manual.</li>
+          <li>Imported, exported and used the routes file just as above.</li>
+          <li>Created the same <code>user.json</code> and <code>products.json</code> files as above with the same details.</li>
+            <li>Checked all the POST, GET, PUT, DELETE commands for the user details and product details through POSTMAN which modifies them in the MySQL database as well. They all worked just fine.</li>
+           <h4><i>CONCLUSION: This API successfully performs all CURD operations on a user and products model with details stored in a MySQL database and accessed through an ORM module called Sequelize.<br></h4></i>
+          
+   
   
       
   
