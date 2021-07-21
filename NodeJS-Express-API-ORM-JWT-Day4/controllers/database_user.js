@@ -19,7 +19,7 @@ Users.sync({ force: true })
     });
   });
   
-  export const signUp = ('/', function(req, res) {
+  export const signUp = ('/', function (req, res) {
 	Users.create({fullName: req.body.fullName, age: req.body.age, phoneNo: req.body.phoneNo, email: req.body.email, role:"User", password: req.body.password});
 	res.json("Sign Up Successfull!");
 });
@@ -34,11 +34,22 @@ export const signIn = ('/', function (req, res) {
 		if (pass!=user.password) {
 			return res.send('Incorrect Password!');
 		}
+		
 		else{
 		var token = jwt.sign({ id: user.id, email:user.email }, config.secret, {
 		  expiresIn: 86400 // expires in 24 hours
 		});
-		
+	/*To check the password, I was first using bycrpt comapreSync function which returns a boolean value. It was not working and returning false even when the passwords matched
+	Here's the code:
+	
+	var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
+	if (!passwordIsValid) {
+	return res.status(401).send({'Invalid Password!'});
+	else {
+	var token = jwt.sign({ id: user.id }, config.secret, {
+	expiresIn: 86400 // expires in 24 hours
+	}});
+	*/
   }
 		
 		res.status(200).send({ auth: true, accessToken: token });
